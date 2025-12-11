@@ -20,17 +20,21 @@ export interface iTunesApiResponse {
   results: Song[];
 }
 
-// Enum for sorting options
-export enum SortBy {
-  SONG_NAME = 'trackName',
-  ALBUM_NAME = 'collectionName'
-}
+// Constants for sorting options
+export const SortBy = {
+  SONG_NAME: 'trackName',
+  ALBUM_NAME: 'collectionName'
+} as const;
 
-// Enum for sort order
-export enum SortOrder {
-  ASC = 'asc',
-  DESC = 'desc'
-}
+export type SortBy = typeof SortBy[keyof typeof SortBy];
+
+// Constants for sort order
+export const SortOrder = {
+  ASC: 'asc',
+  DESC: 'desc'
+} as const;
+
+export type SortOrder = typeof SortOrder[keyof typeof SortOrder];
 
 // Interface for search and filter state
 export interface SearchState {
