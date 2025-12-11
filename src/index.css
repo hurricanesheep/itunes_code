@@ -387,11 +387,17 @@ input[type="radio"]:checked::after {
 img {
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
+  display: block;
+  vertical-align: bottom;
+  line-height: 0;
 }
 
 .object-cover {
   object-fit: cover;
   object-position: center;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 /* Gradient backgrounds */

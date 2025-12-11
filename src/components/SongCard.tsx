@@ -101,9 +101,9 @@ export const SongCard: React.FC<SongCardProps> = memo(({ song, index, currentlyP
             isDark
               ? 'bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] border-[#2a2a2a] group-hover:border-[rgba(0,243,255,0.5)] group-hover:glow-blue'
               : 'bg-gradient-to-br from-blue-100 to-purple-100 border-gray-100 group-hover:border-blue-300'
-          }`}>
+          }`} style={{ display: 'flex', alignItems: 'stretch' }}>
             {imageLoading && (
-              <div className={`absolute inset-0 flex items-center justify-center bg-opacity-80 ${
+              <div className={`absolute inset-0 flex items-center justify-center bg-opacity-80 z-10 ${
                 isDark ? 'bg-[#0a0a0a]' : 'bg-white'
               }`}>
                 <div className={`animate-spin rounded-full h-6 w-6 border-b-2 ${
@@ -116,9 +116,10 @@ export const SongCard: React.FC<SongCardProps> = memo(({ song, index, currentlyP
               <img
                 src={song.artworkUrl100}
                 alt={`${song.collectionName} album art`}
-                className={`w-full h-full object-cover transition-all duration-300 ${
+                className={`w-full h-full object-cover transition-all duration-300 block ${
                   imageLoading ? 'opacity-0 scale-110' : 'opacity-100 scale-100'
                 } hover:scale-105`}
+                style={{ display: 'block', verticalAlign: 'bottom', lineHeight: 0 }}
                 onError={handleImageError}
                 onLoad={handleImageLoad}
                 crossOrigin="anonymous"
@@ -136,7 +137,7 @@ export const SongCard: React.FC<SongCardProps> = memo(({ song, index, currentlyP
             )}
             
             {/* Album art overlay on hover */}
-            <div className="absolute inset-0 bg-black bg-opacity-0 hover:bg-opacity-10 transition-all duration-200 rounded-lg"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-200 pointer-events-none rounded-lg"></div>
           </div>
         </div>
 
