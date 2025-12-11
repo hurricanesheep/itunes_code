@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSongs } from './hooks/useSongs';
 import { useDarkMode } from './hooks/useDarkMode';
 import { SearchInput } from './components/SearchInput';

@@ -8,15 +8,6 @@ export class iTunesApiService {
   private static readonly BASE_URL = 'https://itunes.apple.com/search';
   
   /**
-   * List of CORS proxies to try in order
-   */
-  private static readonly CORS_PROXIES = [
-    'https://api.allorigins.win/get?url=',
-    'https://corsproxy.io/?',
-    'https://api.codetabs.com/v1/proxy?quest=',
-  ];
-  
-  /**
    * Fetches songs from iTunes API with the specified search term
    * Tries multiple CORS proxy methods to ensure success
    * @param term - Search term (default: "Taylor+Swift")

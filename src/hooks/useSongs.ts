@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
 import { Song, SortBy, SortOrder } from '../types/Song';
 import { iTunesApiService } from '../services/iTunesApi';
-import { filterSongs, sortSongs, debounce } from '../utils/songUtils';
+import { filterSongs, sortSongs } from '../utils/songUtils';
 
 /**
  * Custom hook for managing song data, search, and sorting functionality
